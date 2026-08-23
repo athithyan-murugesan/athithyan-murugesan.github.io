@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Athithyan Murugesan | Terminal Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #000;
+            color: #00ff66;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        ::selection {
+            background: #00ff66;
+            color: #000;
+        }
+
+        /* Terminal */
+
+        .terminal {
+            max-width: 1100px;
+            margin: 30px auto;
+            border: 1px solid #00ff66;
+            min-height: calc(100vh - 60px);
+            box-shadow: 0 0 30px rgba(0, 255, 102, 0.15);
+        }
+
+        /* Terminal Header */
+
+        .terminal-header {
+            background: #111;
+            padding: 10px 15px;
+            border-bottom: 1px solid #00ff66;
+            display: flex;
+            align-items: center;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00ff66;
+            margin-right: 7px;
+        }
+
+        .terminal-title {
+            color: #aaa;
+            margin-left: 10px;
+        }
+
+        /* Content */
+
+        .terminal-content {
+            padding: 30px;
+        }
+
+        .prompt {
+            margin-bottom: 25px;
+        }
+
+        .user {
+            color: #fff;
+        }
+
+        .path {
+            color: #00ff66;
+        }
+
+        .command {
+            color: #fff;
+        }
+
+        .output {
+            color: #b7ffcc;
+            margin-bottom: 30px;
+        }
+
+        /* Navigation */
+
+        .nav {
+            border-top: 1px dashed #006633;
+            border-bottom: 1px dashed #006633;
+            padding: 15px 0;
+            margin: 25px 0;
+        }
+
+        .nav a {
+            color: #00ff66;
+            text-decoration: none;
+            margin-right: 25px;
+        }
+
+        .nav a:hover {
+            background: #00ff66;
+            color: #000;
+        }
+
+        /* Headings */
+
+        h1 {
+            color: #00ff66;
+            font-size: 42px;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #00ff66;
+            margin-bottom: 8px;
+        }
+
+        /* Skills */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .skill {
+            border: 1px solid #006633;
+            padding: 10px 15px;
+            color: #b7ffcc;
+        }
+
+        .skill::before {
+            content: "[+] ";
+            color: #00ff66;
+        }
+
+        .skill:hover {
+            border-color: #00ff66;
+            background: rgba(0, 255, 102, 0.05);
+        }
+
+        /* Cards */
+
+        .card {
+            border-left: 2px solid #00ff66;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card ul {
+            padding-left: 25px;
+            color: #b7ffcc;
+        }
+
+        .card li {
+            margin-bottom: 5px;
+        }
+
+        /* Links */
+
+        a {
+            color: #00ff66;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        /* Cursor */
+
+        .cursor {
+            display: inline-block;
+            width: 9px;
+            height: 18px;
+            background: #00ff66;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1;
+            }
+
+            51%, 100% {
+                opacity: 0;
+            }
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px dashed #006633;
+            margin-top: 40px;
+            padding-top: 20px;
+            color: #777;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+
+            .terminal {
+                margin: 0;
+                border: none;
+            }
+
+            .terminal-content {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .nav a {
+                display: inline-block;
+                margin-bottom: 8px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="terminal">
+
+    <!-- Terminal Header -->
+
+    <div class="terminal-header">
+
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+        <span class="terminal-title">
+            athithyan@portfolio: ~
+        </span>
+
+    </div>
+
+
+    <div class="terminal-content">
+
+
+        <!-- Welcome -->
+
+        <div class="prompt">
+
+            <span class="user">
+                athithyan@portfolio
+            </span>
+            :
+            <span class="path">~</span>
+            $
+            <span class="command">
+                whoami
+            </span>
+
+        </div>
+
+
+        <div class="output">
+
+            <h1>Athithyan Murugesan</h1>
+
+            <h2>
+                Desktop Support Engineer
+            </h2>
+
+            <p>
+                IT Support Professional | 1.5+ Years Experience
+            </p>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <div class="nav">
+
+            <a href="#about">[about]</a>
+
+            <a href="#skills">[skills]</a>
+
+            <a href="#experience">[experience]</a>
+
+            <a href="#projects">[projects]</a>
+
+            <a href="#education">[education]</a>
+
+            <a href="#contact">[contact]</a>
+
+        </div>
+
+
+        <!-- About -->
+
+        <section id="about">
+
+            <div class="prompt">
+
+                <span class="user">
+                    athithyan@portfolio
+                </span>
+                :
+                <span class="path">~</span>
+                $
+                <span class="command">
+                    cat about.txt
+                </span>
+
+            </div>
+
+            <div class="output">
+
+                <p>
+                    I am a Desktop Support Engineer with hands-on
+                    experience in providing technical support to
+                    end users.
+                </p>
+
+                <br>
+
+                <p>
+                    I specialize in Windows troubleshooting,
+                    Active Directory, Microsoft 365, networking,
+                    VPN, firewall, hardware, printer support and
+                    IT asset management.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Skills -->
+
+        <section id="skills">
+
+            <div class="prompt">
+
+                <span class="user">
+                    athithyan@portfolio
+                </span>
+                :
+                <span class="path">~</span>
+                $
+                <span class="command">
+                    ls skills/
+                </span>
+
+            </div>
+
+
+            <div class="skills">
+
+                <div class="skill">
+                    Windows 10 / 11
+                </div>
+
+                <div class="skill">
+                    Active Directory
+                </div>
+
+                <div class="skill">
+                    Group Policy
+                </div>
+
+                <div class="skill">
+                    Microsoft 365
+                </div>
+
+                <div class="skill">
+                    Networking
+                </div>
+
+                <div class="skill">
+                    VPN
+                </div>
+
+                <div class="skill">
+                    Firewall
+                </div>
+
+                <div class="skill">
+                    Hardware Support
+                </div>
+
+                <div class="skill">
+                    Printer Support
+                </div>
+
+                <div class="skill">
+                    IT Asset Management
+                </div>
+
+                <div class="skill">
+                    Remote Support
+                </div>
+
+                <div class="skill">
+                    Ticket Management
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Experience -->
+
+        <section id="experience">
+
+            <div class="prompt">
+
+                <span class="user">
+                    athithyan@portfolio
+                </span>
+                :
+                <span class="path">~</span>
+                $
+                <span class="command">
+                    cat experience.log
+                </span>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Desktop Support Engineer
+                </h3>
+
+                <p>
+                    Experience: 1.5+ Years
+                </p>
+
+                <br>
+
+                <ul>
+
+                    <li>
+                        L1/L2 technical support
+                    </li>
+
+                    <li>
+                        Windows troubleshooting
+                    </li>
+
+                    <li>
+                        Active Directory user management
+                    </li>
+
+                    <li>
+                        Microsoft 365 and Outlook support
+                    </li>
+
+                    <li>
+                        VPN and network troubleshooting
+                    </li>
+
+                    <li>
+                        Hardware and printer troubleshooting
+                    </li>
+
+                    <li>
+                        IT asset management
+                    </li>
+
+                    <li>
+                        Vendor and ISP coordination
+                    </li>
+
+                    <li>
+                        Ticket resolution within SLA
+                    </li>
+
+                    <li>
+                        Remote support using AnyDesk,
+                        TeamViewer and RDP
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- Projects -->
+
+        <section id="projects">
+
+            <div class="prompt">
+
+                <span class="user">
+                    athithyan@portfolio
+                </span>
+                :
+                <span class="path">~</span>
+                $
+                <span class="command">
+                    ls projects/
+                </span>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    01. IT Asset Management System
+                </h3>
+
+                <p class="output">
+
+                    IT asset tracking and management system
+                    for maintaining company hardware,
+                    users and equipment information.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    02. IT Infrastructure Support
+                </h3>
+
+                <p class="output">
+
+                    Troubleshooting and support for computers,
+                    printers, CCTV, networking, internet
+                    connectivity and other IT infrastructure.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    03. Network Troubleshooting
+                </h3>
+
+                <p class="output">
+
+                    Troubleshooting LAN, Wi-Fi, DNS, VPN,
+                    ISP connectivity and network issues.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Education -->
+
+        <section id="education">
+
+            <div class="prompt">
+
+                <span class="user">
+                    athithyan@portfolio
+                </span>
+                :
+                <span class="path">~</span>
+                $
+                <span class="command">
+                    cat education.txt
+                </span>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    MBA – Human Resource Management
+                </h3>
+
+                <p class="output">
+                    Postgraduate Degree
+                </p>
+
+                <h3>
+                    B.Com Computer Applications
+                </h3>
+
+                <p class="output">
+                    Bachelor of Commerce – Computer Applications
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact -->
+
+        <section id="contact">
+
+            <div class="prompt">
+
+                <span class="user">
+                    athithyan@portfolio
+                </span>
+                :
+                <span class="path">~</span>
+                $
+                <span class="command">
+                    ./contact.sh
+                </span>
+
+            </div>
+
+
+            <div class="output">
+
+                <p>
+                    Email:
+                    <a href="mailto:yourmail@gmail.com">
+                        yourmail@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    LinkedIn:
+                    <a href="https://www.linkedin.com/"
+                       target="_blank">
+                        LinkedIn Profile
+                    </a>
+                </p>
+
+                <p>
+                    GitHub:
+                    <a href="https://github.com/"
+                       target="_blank">
+                        GitHub Profile
+                    </a>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Final Terminal -->
+
+        <div class="prompt">
+
+            <span class="user">
+                athithyan@portfolio
+            </span>
+            :
+            <span class="path">~</span>
+            $
+
+            <span class="cursor"></span>
+
+        </div>
+
+
+        <footer>
+
+            <p>
+                © 2026 Athithyan Murugesan
+            </p>
+
+            <p>
+                <span>
+                    System Status: ONLINE
+                </span>
+            </p>
+
+        </footer>
+
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
