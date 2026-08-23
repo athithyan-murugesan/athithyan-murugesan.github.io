@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athithyan Murugesan - Resume</title>
+<!-- Font Awesome CDN for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f8fafc;
+    --bg-panel: #ffffff;
+    --bg-panel-2: #f1f5f9;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-faint: #eff6ff;
+    --accent: #0284c7;
+    --whatsapp: #25d366;
+    --whatsapp-hover: #1da851;
+    --text: #0f172a;
+    --text-dim: #475569;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(2, 132, 199, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* Navigation Bar with Icons */
+  .nav-card {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+  nav.card-body { padding: 10px 16px; }
+  .navlinks { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-size: 14px; font-weight: 600; }
+  .navlinks a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all .2s ease;
+  }
+  .navlinks a i {
+    font-size: 14px;
+    color: var(--primary);
+  }
+  .navlinks a:hover { color: var(--primary); background: var(--primary-faint); }
+
+  /* Card Layouts */
+  .card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  .card-body { padding: 32px; }
+
+  /* Header / Hero */
+  .status-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #dcfce7; color: #166534; font-size: 12px; font-weight: 600;
+    padding: 4px 12px; border-radius: 20px; border: 1px solid #bbf7d0;
+    margin-bottom: 12px;
+  }
+  .status-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; }
+
+  .hero-name {
+    font-size: clamp(28px, 5vw, 38px);
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .hero-role {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 16px;
+  }
+  .hero-summary { color: var(--text-dim); font-size: 15px; max-width: 740px; line-height: 1.7; }
+
+  /* Contact Links Section */
+  .contact-row {
+    display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 24px; font-size: 14px;
+    padding-top: 20px; border-top: 1px solid var(--border);
+  }
+  .contact-item {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--text-dim); text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .contact-item i {
+    color: var(--primary);
+    font-size: 16px;
+    width: 18px;
+    text-align: center;
+  }
+  .contact-item:hover { color: var(--primary); }
+  .contact-item .tag { font-weight: 700; color: var(--text); }
+
+  /* Section Headings with Icons */
+  .sec-head {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 24px;
+    padding-bottom: 12px; border-bottom: 2px solid var(--border);
+  }
+  .sec-head i {
+    font-size: 20px;
+    color: var(--primary);
+  }
+  .sec-head h2 { color: var(--text); font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+
+  /* Experience Timeline */
+  .timeline { position: relative; padding-left: 20px; border-left: 2px solid var(--border); margin-left: 8px; }
+  .job { position: relative; margin-bottom: 28px; }
+  .job:last-child { margin-bottom: 0; }
+  .job::before {
+    content: ""; position: absolute; left: -27px; top: 4px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--primary); border: 3px solid var(--bg-panel);
+    box-shadow: 0 0 0 1px var(--primary);
+  }
+  .job-head {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 14px;
+    margin-bottom: 12px;
+  }
+  .job-title { color: var(--text); font-weight: 700; font-size: 16px; }
+  .job-co { color: var(--accent); font-size: 14px; font-weight: 600; }
+  .job-date {
+    color: var(--primary); background: var(--primary-faint); font-size: 12px; font-weight: 600;
+    padding: 4px 12px; border-radius: 20px; white-space: nowrap; border: 1px solid rgba(37, 99, 235, 0.15);
+  }
+  ul.bullets { list-style: none; padding-left: 0; }
+  ul.bullets li { position: relative; padding-left: 22px; margin-bottom: 8px; font-size: 14px; color: var(--text-dim); }
+  ul.bullets li::before {
+    content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: bold; font-size: 13px; top: 1px;
+  }
+
+  /* Skills Grid */
+  .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .skill-cat {
+    border: 1px solid var(--border); border-radius: 12px; padding: 18px; background: var(--bg-panel-2);
+  }
+  .skill-cat h4 {
+    color: var(--text); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .skill-cat h4 i {
+    color: var(--primary);
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-size: 12px; font-weight: 500; padding: 5px 12px; border: 1px solid var(--border); border-radius: 20px;
+    color: var(--text); background: var(--bg-panel); box-shadow: var(--shadow-sm);
+  }
+
+  /* Education */
+  .edu-item {
+    position: relative; padding-left: 20px; border-left: 2px solid var(--border); margin-left: 8px;
+    padding-bottom: 20px;
+  }
+  .edu-item:last-child { border-left: 2px solid transparent; padding-bottom: 0; }
+  .edu-item::before {
+    content: ""; position: absolute; left: -7px; top: 4px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent); border: 3px solid var(--bg-panel);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  .edu-name { color: var(--text); font-size: 15px; font-weight: 700; }
+  .edu-sub { color: var(--text-dim); font-size: 13.5px; margin-top: 2px; }
+  .edu-date { color: var(--accent); font-size: 12.5px; font-weight: 600; margin-top: 4px; display: inline-block; }
+
+  /* Contact Action Buttons */
+  .contact-cta { text-align: center; padding: 40px 24px; background: linear-gradient(180deg, var(--bg-panel), var(--primary-faint)); }
+  .contact-cta p { color: var(--text-dim); font-size: 15px; margin-bottom: 24px; }
+  .btn-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px; border: 1px solid var(--primary); background: var(--primary); color: #ffffff;
+    text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 600;
+    transition: all .2s ease; box-shadow: 0 2px 4px rgba(37,99,235,0.2);
+  }
+  .btn:hover { background: var(--primary-hover); transform: translateY(-1px); }
+  .btn.whatsapp { background: var(--whatsapp); border-color: var(--whatsapp); }
+  .btn.whatsapp:hover { background: var(--whatsapp-hover); border-color: var(--whatsapp-hover); }
+  .btn.alt { background: var(--bg-panel); border-color: var(--border); color: var(--text); box-shadow: var(--shadow-sm); }
+  .btn.alt:hover { background: var(--bg-panel-2); }
+
+  footer { text-align: center; color: var(--text-dim); font-size: 13px; padding: 20px 0 0; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO SECTION -->
+  <div class="card">
+    <div class="card-body">
+      <span class="status-badge"><span class="status-dot"></span> Available for Hire</span>
+      
+      <div class="hero-name">Athithyan Murugesan</div>
+      <div class="hero-role">IT Support Engineer &mdash; L1/L2 &bull; Service Desk &bull; Networking &amp; Security</div>
+
+      <p class="hero-summary">
+        IT Support Engineer with hands-on L1/L2 experience in incident management and service desk
+        operations. Resolves 95%+ of tickets within SLA, boosting uptime and user satisfaction.
+        Troubleshoots hardware, software, and network issues across Windows, Linux, and macOS.
+      </p>
+
+      <!-- CONTACT INFO -->
+      <div class="contact-row">
+        <span class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span class="tag">Location:</span> Chennai, India
+        </span>
+
+        <a href="tel:+918610036956" class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span class="tag">Phone:</span> +91 86100 36956
+        </a>
+
+        <a href="https://wa.me/918610036956?text=Hii%20Athithyan" target="_blank" class="contact-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span class="tag">WhatsApp:</span> Chat Now
+        </a>
+
+        <a href="mailto:athithyan383@outlook.com" class="contact-item">
+          <i class="fa-regular fa-envelope"></i>
+          <span class="tag">Email:</span> athithyan383@outlook.com
+        </a>
+
+        <a href="https://linkedin.com/in/athithyanmurugesan" target="_blank" class="contact-item">
+          <i class="fa-brands fa-linkedin"></i>
+          <span class="tag">LinkedIn:</span> /in/athithyanmurugesan
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION WITH ICONS -->
+  <div class="nav-card">
+    <nav class="card-body">
+      <div class="navlinks">
+        <a href="#about"><i class="fa-regular fa-user"></i> About</a>
+        <a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
+        <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
+        <a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+        <a href="#contact"><i class="fa-regular fa-paper-plane"></i> Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="card" id="about">
+    <div class="card-body">
+      <div class="sec-head">
+        <i class="fa-regular fa-user"></i>
+        <h2>About Me</h2>
+      </div>
+      <p style="font-size: 15px; color: var(--text-dim);">
+        Support engineer focused on keeping operations online &mdash; from desktop and printer fixes to
+        firewall rules and Active Directory administration. Comfortable owning a ticket end-to-end:
+        diagnose, fix, document, and close within SLA.
+      </p>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="card" id="experience">
+    <div class="card-body">
+      <div class="sec-head">
+        <i class="fa-solid fa-briefcase"></i>
+        <h2>Professional Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <div class="job-title">IT Support Engineer</div>
+              <div class="job-co">Inspace Technology Pvt. Ltd. &middot; Chennai</div>
+            </div>
+            <div class="job-date">Apr 2025 &ndash; Present</div>
+          </div>
+          <ul class="bullets">
+            <li>Delivered L1 &amp; L2 technical support for desktops, laptops, printers, and network issues.</li>
+            <li>Installed, configured, and maintained Windows 10/11 systems, antivirus, and security updates.</li>
+            <li>Administered Active Directory including user accounts, permissions, and Group Policy.</li>
+            <li>Troubleshot LAN/WAN, Wi-Fi, DNS, DHCP, VPN, and IP configurations.</li>
+            <li>Configured SonicWall firewall rules and provided secure VPN connectivity support.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="card" id="skills">
+    <div class="card-body">
+      <div class="sec-head">
+        <i class="fa-solid fa-code"></i>
+        <h2>Technical Skills</h2>
+      </div>
+      <div class="skill-grid">
+        <div class="skill-cat">
+          <h4><i class="fa-brands fa-windows"></i> Operating Systems</h4>
+          <div class="chips">
+            <span class="chip">Windows 10/11</span>
+            <span class="chip">Windows Server 2016/2019</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <h4><i class="fa-solid fa-user-gear"></i> System Administration</h4>
+          <div class="chips">
+            <span class="chip">Active Directory</span>
+            <span class="chip">Group Policy</span>
+            <span class="chip">User Access Management</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <h4><i class="fa-solid fa-network-wired"></i> Networking</h4>
+          <div class="chips">
+            <span class="chip">TCP/IP</span>
+            <span class="chip">DNS</span>
+            <span class="chip">DHCP</span>
+            <span class="chip">LAN/WAN</span>
+            <span class="chip">VPN</span>
+            <span class="chip">IP Configuration</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <h4><i class="fa-solid fa-laptop-medical"></i> Hardware Support</h4>
+          <div class="chips">
+            <span class="chip">Desktop &amp; Laptop Troubleshooting</span>
+            <span class="chip">Printers &amp; Peripherals</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <h4><i class="fa-solid fa-shield-halved"></i> Security</h4>
+          <div class="chips">
+            <span class="chip">SonicWall Firewall</span>
+            <span class="chip">Endpoint Protection</span>
+            <span class="chip">Patch Management</span>
+            <span class="chip">Antivirus Deployment</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <h4><i class="fa-solid fa-desktop"></i> Remote Support Tools</h4>
+          <div class="chips">
+            <span class="chip">TeamViewer</span>
+            <span class="chip">AnyDesk</span>
+            <span class="chip">Remote Desktop (RDP)</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <h4><i class="fa-solid fa-video"></i> Surveillance Systems</h4>
+          <div class="chips">
+            <span class="chip">CCTV Installation</span>
+            <span class="chip">IP Camera Configuration</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <h4><i class="fa-solid fa-cloud"></i> Cloud</h4>
+          <div class="chips">
+            <span class="chip">AWS Basics (EC2, IAM, S3)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="card" id="education">
+    <div class="card-body">
+      <div class="sec-head">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h2>Education &amp; Certifications</h2>
+      </div>
+      <div class="edu-item">
+        <div class="edu-name">Bachelor of Commerce &amp; Computer Application</div>
+        <div class="edu-sub">Annai College of Arts &amp; Science</div>
+        <div class="edu-date">2021 &ndash; 2024</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-name">Hardware &amp; Networking Certification</div>
+        <div class="edu-sub">Systech Hardware &amp; Network Academy (P) Ltd</div>
+        <div class="edu-date">2024 &ndash; 2025</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="card" id="contact">
+    <div class="card-body contact-cta">
+      <div class="sec-head" style="justify-content:center; border:none; margin-bottom:12px;">
+        <i class="fa-regular fa-paper-plane"></i>
+        <h2>Get in Touch</h2>
+      </div>
+      <p>Open to IT support, service desk, and infrastructure roles.</p>
+      <div class="btn-row">
+        <a class="btn whatsapp" href="https://wa.me/918610036956?text=Hii%20Athithyan" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+        <a class="btn" href="mailto:athithyan383@outlook.com">
+          <i class="fa-regular fa-envelope"></i> Email Me
+        </a>
+        <a class="btn alt" href="https://linkedin.com/in/athithyanmurugesan" target="_blank">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a class="btn alt" href="tel:+918610036956">
+          <i class="fa-solid fa-phone"></i> Call
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Athithyan Murugesan. All rights reserved.</p>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
